@@ -45,6 +45,8 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   # Shoulda Matchers
   gem 'shoulda-matchers', '~> 4.0'
+  # Factory Bot
+  gem 'factory_bot_rails'
 end
 
 group :development do
