@@ -1,0 +1,2 @@
+module HalamanHelper
+end
