@@ -79,6 +79,11 @@ blocks:
           - echo "Install PostgreSql"
           - sudo apt-get update && sudo apt-get install -y libpq-dev
           - gem install pg
+          - echo "Start PostgreSql"
+          - sudo service postgres start
+          - echo "Database setup"
+          - rails db:create
+          - rails db:migrate
           - echo "done"
       jobs:
       - name: Cucumber
