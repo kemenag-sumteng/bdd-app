@@ -10,10 +10,10 @@
           Tentang
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/tentang/visi_misi">Visi dan Misi Kantor Kementerian Agama Kabupaten Sumba Tengah</a>
+          <%= link_to "Visi dan Misi Kantor Kementerian Agama Kabupaten Sumba Tengah", tentang_visi_misi_kantor_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/tentang/tekad_urakat">Tekad Pelayanan Seksi Urusan Agama Katolik</a>
-          <a class="dropdown-item" href="/tentang/tekad_pendakat">Tekad Pelayanan Penyelenggara Pendidikan Agama Katolik</a>
+          <%= link_to "Tekad Pelayanan Seksi Urusan Agama Katolik", tentang_tekat_urakat_path, class: "dropdown-item" %>
+          <%= link_to "Tekad Pelayanan Penyelenggara Pendidikan Agama Katolik", tentang_tekat_pendakat_path, class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item dropdown">
