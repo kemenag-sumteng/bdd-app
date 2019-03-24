@@ -66,6 +66,8 @@ group :test do
   gem 'chromedriver-helper'
   # Database Cleaner
   gem 'database_cleaner'
+  # Rails Controller Testing
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
