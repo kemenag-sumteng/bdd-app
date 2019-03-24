@@ -20,7 +20,7 @@ blocks:
           - sem-version ruby 2.5.3
           - echo "Done set Ruby version"
           - echo "Install dependencies in vendor/bundle"
-          - bundle install --path vendor/bundle
+          - bundle install --deployment --path vendor/bundle
           - echo "Store the latest version of dependencies in cache"
           - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
           - echo "done"
