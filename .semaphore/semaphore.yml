@@ -5,52 +5,86 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: "Build"
+  - name: "Setup"
     task:
-      env_vars:
-        - name: APP_ENV
-          value: prod
       jobs:
-      - name: Docker build
+      - name: bundle
         commands:
+          - echo "Checkout from repository"
           - checkout
-          - ls -1
-          - echo $APP_ENV
-          - echo "Docker build..."
+          - echo "Done Checkout"
+          - echo "Restore dependencies from cache"
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+          - echo "Done restore dependencies from cache"
+          - echo "Set Ruby version"
+          - sem-version ruby 2.5.3
+          - echo "Done set Ruby version"
+          - echo "Install dependencies in vendor/bundle"
+          - bundle install --deployment -j 4 --path vendor/bundle
+          - echo "Store the latest version of dependencies in cache"
+          - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
           - echo "done"
-  - name: "Smoke tests"
+  - name: "Code scanning"
     task:
       jobs:
-      - name: Smoke
+      - name: check style + security
         commands:
+          - echo "Checkout from repository"
           - checkout
-          - echo "make smoke"
+          - echo "Restore dependencies from cache"
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+          - echo "Set Ruby version"
+          - sem-version ruby 2.5.3
+          - echo "Install dependencies in vendor/bundle"
+          - bundle install --deployment --path vendor/bundle
+          - echo "Rubocop scanning"
+          - bundle exec rubocop
+          - echo "Brakeman scanning"
+          - bundle exec brakeman
+          - echo "done"
   - name: "Unit tests"
     task:
+      prologue:
+        commands:
+          - echo "Checkout from repository"
+          - checkout
+          - echo "Restore dependencies from cache"
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+          - echo "Start postgres"
+          - sem-service start postgres
+          - echo "Set Ruby version"
+          - sem-version ruby 2.5.3
+          - echo "Install dependencies in vendor/bundle"
+          - bundle install --deployment --path vendor/bundle
+          - echo "Database setup"
+          - bundle exec rake db:setup
+          - echo "done"
       jobs:
       - name: RSpec
         commands:
-          - checkout
-          - echo "make rspec"
-      - name: Lint code
-        commands:
-          - checkout
-          - echo "make lint"
-      - name: Check security
-        commands:
-          - checkout
-          - echo "make security"
+          - echo "RSpec tests"
+          - bundle exec rspec
+          - echo "done"
   - name: "Integration tests"
     task:
+      prologue:
+        commands:
+          - echo "Checkout from repository"
+          - checkout
+          - echo "Restore dependencies from cache"
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
+          - echo "Start postgres"
+          - sem-service start postgres
+          - echo "Set Ruby version"
+          - sem-version ruby 2.5.3
+          - echo "Install dependencies in vendor/bundle"
+          - bundle install --deployment --path vendor/bundle
+          - echo "Database setup"
+          - bundle exec rake db:setup
+          - echo "done"
       jobs:
       - name: Cucumber
         commands:
-          - checkout
-          - echo "make cucumber"
-  - name: "Push Image"
-    task:
-      jobs:
-      - name: Push
-        commands:
-          - checkout
-          - echo "make docker.push"
+          - echo "Cucumber integration tests"
+          - bundle exec cucumber
+          - echo "done"
