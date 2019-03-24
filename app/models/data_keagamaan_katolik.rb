@@ -1,0 +1,2 @@
+class DataKeagamaanKatolik < ApplicationRecord
+end
