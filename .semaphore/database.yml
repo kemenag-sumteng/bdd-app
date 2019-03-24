@@ -3,4 +3,4 @@ test:
   database: test
   pool: 5
   username: postgres
-  password: ~
+  password: 
