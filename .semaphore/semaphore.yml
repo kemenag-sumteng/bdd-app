@@ -10,13 +10,16 @@ blocks:
       prologue:
         commands:
           - sem-version ruby 2.5.3
+          - gem install bundler
       jobs:
       - name: bundle
         commands:
           - echo "Checkout from repository"
           - checkout
+          - echo "Restore dependencies from cache"
+          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Install dependencies in vendor/bundle"
-          - bundle install
+          - bundle install --deployment --path vendor/bundle
           - echo "Store the latest version of dependencies in cache"
           - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
           - echo "done"
