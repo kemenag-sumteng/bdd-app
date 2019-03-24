@@ -25,6 +25,10 @@ blocks:
           - echo "done"
   - name: "Code scanning"
     task:
+      prologue:
+        commands:
+          - sem-version ruby 2.5.3
+          - gem install bundler
       jobs:
       - name: check style + security
         commands:
@@ -32,8 +36,6 @@ blocks:
           - checkout
           - echo "Restore dependencies from cache"
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
-          - echo "Set Ruby version"
-          - sem-version ruby 2.5.3
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Rubocop scanning"
@@ -45,14 +47,14 @@ blocks:
     task:
       prologue:
         commands:
+          - sem-version ruby 2.5.3
+          - gem install bundler
           - echo "Checkout from repository"
           - checkout
           - echo "Restore dependencies from cache"
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Start postgres"
           - sem-service start postgres
-          - echo "Set Ruby version"
-          - sem-version ruby 2.5.3
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Database setup"
@@ -68,14 +70,14 @@ blocks:
     task:
       prologue:
         commands:
+          - sem-version ruby 2.5.3
+          - gem install bundler
           - echo "Checkout from repository"
           - checkout
           - echo "Restore dependencies from cache"
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Start postgres"
           - sem-service start postgres
-          - echo "Set Ruby version"
-          - sem-version ruby 2.5.3
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Database setup"
