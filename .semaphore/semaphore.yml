@@ -16,7 +16,7 @@ blocks:
           - echo "Checkout from repository"
           - checkout
           - echo "Install dependencies in vendor/bundle"
-          - bundle install --deployment --path vendor/bundle
+          - bundle install
           - echo "Store the latest version of dependencies in cache"
           - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
           - echo "done"
