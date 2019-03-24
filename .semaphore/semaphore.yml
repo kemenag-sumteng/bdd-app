@@ -76,13 +76,6 @@ blocks:
           - sem-service start postgres
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
-          - echo "Install PostgreSql"
-          - sudo apt-get update && sudo apt-get install -y libpq-dev
-          - gem install pg
-          - echo "Start PostgreSql"
-          - sem-service start postgres
-          - echo "Database setup"
-          - bundle exec rake db:setup
           - echo "done"
       jobs:
       - name: Cucumber
