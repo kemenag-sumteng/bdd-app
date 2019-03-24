@@ -56,7 +56,8 @@ blocks:
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Database setup"
-          - bundle exec rake db:setup
+          - bundle exec rake db:create
+          - bundle exec rake db:migrate
           - echo "done"
       jobs:
       - name: RSpec
