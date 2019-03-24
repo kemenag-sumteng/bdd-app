@@ -15,8 +15,6 @@ blocks:
         commands:
           - echo "Checkout from repository"
           - checkout
-          - echo "Restore dependencies from cache"
-          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Store the latest version of dependencies in cache"
