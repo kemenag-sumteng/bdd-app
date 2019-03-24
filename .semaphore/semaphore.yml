@@ -80,7 +80,7 @@ blocks:
           - sudo apt-get update && sudo apt-get install -y libpq-dev
           - gem install pg
           - echo "Start PostgreSql"
-          - sudo service postgres start
+          - sem-service start postgres
           - echo "Database setup"
           - rails db:create
           - rails db:migrate
