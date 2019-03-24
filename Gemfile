@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   # Cucumber
   gem 'cucumber-rails', require: false
+  # Shoulda Matchers
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
