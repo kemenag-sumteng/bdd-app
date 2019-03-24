@@ -81,5 +81,5 @@ blocks:
       - name: Cucumber
         commands:
           - echo "Cucumber integration tests"
-          - bundle exec cucumber
+          - bundle exec rake cucumber
           - echo "done"
