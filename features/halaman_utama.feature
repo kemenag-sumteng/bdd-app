@@ -6,5 +6,5 @@ Feature: Halaman Utama
 	Scenario: View halaman utama
 		Given I am on the halaman utama
 		When Visit Halaman Utama, I should see "Salve."
-		And I can see "Selamat datang di Bimas Katolik Sumba Tengah."
-		Then I also see "Untuk memulai, Anda dapat memilih salah satu dari menu yang tersedia."
+		And there is Selamat "Selamat datang di Bimas Katolik Sumba Tengah."
+		Then there is Untuk "Untuk memulai, Anda dapat memilih salah satu dari menu yang tersedia."

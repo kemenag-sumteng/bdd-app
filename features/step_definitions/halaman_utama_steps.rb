@@ -6,10 +6,10 @@ When("Visit Halaman Utama, I should see {string}") do |string|
   page.has_content?(string)
 end
 
-And("I can see {string}") do |string|
+And("there is Selamat {string}") do |string|
   page.has_content?(string)
 end
 
-Then("I also see {string}") do |string|
+Then("there is Untuk {string}") do |string|
   page.has_content?(string)
 end
