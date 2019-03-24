@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :galeri_foto
   resources :data_pendidikan_agama_katolik
   resources :data_keagamaan_katolik
   get 'tentang/visi-misi-kantor'

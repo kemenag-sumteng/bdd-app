@@ -1,0 +1,2 @@
+class GaleriFoto < ApplicationRecord
+end
