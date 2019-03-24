@@ -20,4 +20,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'e_data_', 'e_data'
 	inflect.irregular 'katolik', 'katolik'
 	inflect.irregular 'peran', 'peran'
+	inflect.irregular 'tentang', 'tentang'
 end
