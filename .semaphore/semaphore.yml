@@ -7,6 +7,9 @@ agent:
 blocks:
   - name: "Setup"
     task:
+      prologue:
+        commands:
+          - sem-version ruby 2.5.3
       jobs:
       - name: bundle
         commands:
@@ -16,9 +19,6 @@ blocks:
           - echo "Restore dependencies from cache"
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Done restore dependencies from cache"
-          - echo "Set Ruby version"
-          - sem-version ruby 2.5.3
-          - echo "Done set Ruby version"
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
           - echo "Store the latest version of dependencies in cache"
