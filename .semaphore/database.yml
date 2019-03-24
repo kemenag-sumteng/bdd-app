@@ -1,6 +1,6 @@
 test:
   adapter: postgresql
-  database: test
+  database: bdd-dev-app_development
   pool: 5
   username: postgres
   password: 
