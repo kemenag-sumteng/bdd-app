@@ -82,8 +82,8 @@ blocks:
           - echo "Start PostgreSql"
           - sem-service start postgres
           - echo "Database setup"
-          - rails db:create
-          - rails db:migrate
+          - bundle exec rake db:create
+          - bundle exec rake db:migrate
           - echo "done"
       jobs:
       - name: Cucumber
