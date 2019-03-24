@@ -1,28 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= render "partial/navigation" %>
+<div class="card">
+  <p id="notice"><%= notice %></p>
+  <h1 class="card-header">Galeri Foto</h1>
+</div>
 
-<h1>Galeri Foto</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Judul</th>
-      <th>Keterangan</th>
-      <th>Berkas</th>
+      <th scope="col">Judul</th>
+      <th scope="col">Keterangan</th>
+      <th scope="col">Berkas</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @galeri_foto.each do |galeri_foto| %>
-      <tr>
-        <td><%= galeri_foto.judul %></td>
-        <td><%= galeri_foto.keterangan %></td>
-        <td><%= galeri_foto.berkas %></td>
-        <td><%= link_to 'Show', galeri_foto %></td>
-        <td><%= link_to 'Edit', edit_galeri_foto_path(galeri_foto) %></td>
-        <td><%= link_to 'Destroy', galeri_foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @galeri_foto.each do |galeri_foto| %>
+    <tr scope="row">
+      <td><%= galeri_foto.judul %></td>
+      <td><%= galeri_foto.keterangan %></td>
+      <td><%= galeri_foto.berkas %></td>
+      <td><%= link_to 'Show', galeri_foto %></td>
+      <td><%= link_to 'Edit', edit_galeri_foto_path(galeri_foto) %></td>
+      <td><%= link_to 'Destroy', galeri_foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
