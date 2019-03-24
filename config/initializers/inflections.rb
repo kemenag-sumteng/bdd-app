@@ -21,4 +21,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'katolik', 'katolik'
 	inflect.irregular 'peran', 'peran'
 	inflect.irregular 'tentang', 'tentang'
+	inflect.irregular 'foto', 'foto'
+	inflect.irregular 'video', 'video'
 end
