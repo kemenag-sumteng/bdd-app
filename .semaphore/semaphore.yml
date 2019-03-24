@@ -38,8 +38,6 @@ blocks:
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           - echo "Install dependencies in vendor/bundle"
           - bundle install --deployment --path vendor/bundle
-          - echo "Rubocop scanning"
-          - bundle exec rubocop
           - echo "Brakeman scanning"
           - bundle exec brakeman
           - echo "done"
