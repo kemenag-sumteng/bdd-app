@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Judul:</strong>
+  <%= @informasi_berita_terkini.judul %>
+</p>
+
+<p>
+  <strong>Isi:</strong>
+  <%= @informasi_berita_terkini.isi %>
+</p>
+
+<%= link_to 'Edit', edit_informasi_berita_terkini_path(@informasi_berita_terkini) %> |
+<%= link_to 'Back', informasi_berita_terkini_index_path %>
