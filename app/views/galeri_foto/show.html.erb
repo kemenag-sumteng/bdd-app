@@ -6,7 +6,9 @@
 			<strong>Keterangan:</strong>
 			<%= @galeri_foto.keterangan %>
 		</p>
-		<%= link_to 'Edit', edit_galeri_foto_path(@galeri_foto), :class => "btn btn-primary" %>
-		<%= link_to 'Kembali', galeri_foto_index_path, :class => "btn btn-primary" %>
 	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_galeri_foto_path(@galeri_foto), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', galeri_foto_index_path, :class => "btn btn-secondary" %>
+  </div>
 </div>

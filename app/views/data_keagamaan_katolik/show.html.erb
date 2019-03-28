@@ -1,11 +1,13 @@
-<h1 class="card-header"><%= @data_keagamaan_katolik.judul %></h1>
-
-<div class="card-body">
-	<p>
-	  <strong>Tautan:</strong>
-	  <%= @data_keagamaan_katolik.tautan %>
-	</p>
+<div class="card">
+	<h1 class="card-header"><%= @data_keagamaan_katolik.judul %></h1>
+	<div class="card-body">
+		<p>
+			<strong>Tautan:</strong>
+			<%= @data_keagamaan_katolik.tautan %>
+		</p>
+	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_data_keagamaan_katolik_path(@data_keagamaan_katolik), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', data_keagamaan_katolik_index_path, :class => "btn btn-secondary" %>
+  </div>
 </div>
-
-<%= link_to 'Edit', edit_data_keagamaan_katolik_path(@data_keagamaan_katolik) %> |
-<%= link_to 'Kembali', data_keagamaan_katolik_index_path %>

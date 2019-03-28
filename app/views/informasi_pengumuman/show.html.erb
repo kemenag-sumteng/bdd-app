@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Judul:</strong>
-  <%= @informasi_pengumuman.judul %>
-</p>
-
-<p>
-  <strong>Isi:</strong>
-  <%= @informasi_pengumuman.isi %>
-</p>
-
-<%= link_to 'Edit', edit_informasi_pengumuman_path(@informasi_pengumuman) %> |
-<%= link_to 'Kembali', informasi_pengumuman_index_path %>
+<div class="card">
+	<h1 class="card-header"><%= @informasi_pengumuman.judul %></h1>
+	<div class="card-body">
+		<p>
+			<strong>Isi:</strong>
+			<%= @informasi_pengumuman.isi %>
+		</p>
+	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_informasi_pengumuman_path(@informasi_pengumuman), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', informasi_pengumuman_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

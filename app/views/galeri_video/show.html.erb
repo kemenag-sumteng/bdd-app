@@ -1,15 +1,14 @@
-<div class="card">
+<div class="card" align="center">
+	<iframe width="560" height="315" src="<%= @galeri_video.berkas%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	<h1 class="card-header"><%= @galeri_video.judul %></h1>
 	<div class="card-body">
 		<p>
 			<strong>Keterangan:</strong>
 			<%= @galeri_video.keterangan %>
 		</p>
-		<p>
-			<strong>Berkas:</strong>
-			<%= @galeri_video.berkas %>
-		</p>
-		<%= link_to 'Edit', edit_galeri_video_path(@galeri_video), :class => "btn btn-primary" %>
-		<%= link_to 'Kembali', galeri_video_index_path, :class => "btn btn-primary" %>
 	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_galeri_video_path(@galeri_video), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', galeri_video_index_path, :class => "btn btn-secondary" %>
+  </div>
 </div>

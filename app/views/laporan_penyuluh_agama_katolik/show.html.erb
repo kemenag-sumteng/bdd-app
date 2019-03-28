@@ -1,24 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Bulan:</strong>
-  <%= @laporan_penyuluh_agama_katolik.bulan %>
-</p>
-
-<p>
-  <strong>Tahun:</strong>
-  <%= @laporan_penyuluh_agama_katolik.tahun %>
-</p>
-
-<p>
-  <strong>Tautan:</strong>
-  <%= @laporan_penyuluh_agama_katolik.tautan %>
-</p>
-
-<p>
-  <strong>Nama penyuluh:</strong>
-  <%= @laporan_penyuluh_agama_katolik.nama_penyuluh %>
-</p>
-
-<%= link_to 'Edit', edit_laporan_penyuluh_agama_katolik_path(@laporan_penyuluh_agama_katolik) %> |
-<%= link_to 'Kembali', laporan_penyuluh_agama_katolik_index_path %>
+<div class="card">
+	<h1 class="card-header"><%= @laporan_penyuluh_agama_katolik.bulan %> <%= @laporan_penyuluh_agama_katolik.tahun %></h1>
+	<div class="card-body">
+		<p>
+			<strong>Tautan:</strong>
+			<%= @laporan_penyuluh_agama_katolik.tautan %>
+		</p>
+	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_laporan_penyuluh_agama_katolik_path(@laporan_penyuluh_agama_katolik), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', laporan_penyuluh_agama_katolik_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

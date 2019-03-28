@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Bulan:</strong>
-  <%= @laporan_kinerja_pegawai_bimkat_sumteng.bulan %>
-</p>
-
-<p>
-  <strong>Tahun:</strong>
-  <%= @laporan_kinerja_pegawai_bimkat_sumteng.tahun %>
-</p>
-
-<p>
-  <strong>Tautan:</strong>
-  <%= @laporan_kinerja_pegawai_bimkat_sumteng.tautan %>
-</p>
-
-<%= link_to 'Edit', edit_laporan_kinerja_pegawai_bimkat_sumteng_path(@laporan_kinerja_pegawai_bimkat_sumteng) %> |
-<%= link_to 'Kembali', laporan_kinerja_pegawai_bimkat_sumteng_index_path %>
+<div class="card">
+	<h1 class="card-header"><%= @laporan_kinerja_pegawai_bimkat_sumteng.bulan %> <%= @laporan_kinerja_pegawai_bimkat_sumteng.tahun %></h1>
+	<div class="card-body">
+		<p>
+			<strong>Tautan:</strong>
+			<%= @laporan_kinerja_pegawai_bimkat_sumteng.tautan %>
+		</p>
+	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_laporan_kinerja_pegawai_bimkat_sumteng_path(@laporan_kinerja_pegawai_bimkat_sumteng), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', laporan_kinerja_pegawai_bimkat_sumteng_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>
