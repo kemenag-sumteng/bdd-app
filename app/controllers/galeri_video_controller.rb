@@ -1,6 +1,12 @@
 class GaleriVideoController < ApplicationController
   before_action :set_galeri_video, only: [:show, :edit, :update, :destroy]
 
+  # Embed Youtube Video
+  def embed_youtube_video
+    response.headers["X-FRAME-OPTIONS"] = "ALLOW-FROM https://youtube.com"
+    render
+  end
+
   # GET /galeri_video
   # GET /galeri_video.json
   def index
