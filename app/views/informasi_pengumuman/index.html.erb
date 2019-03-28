@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="card">
+  <h1 class="card-header">Informasi Pengumuman</h1>
+</div>
 
-<h1>Informasi Pengumuman</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Judul</th>
-      <th>Isi</th>
+      <th scope="col">Judul</th>
+      <th scope="col">Isi</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @informasi_pengumuman.each do |informasi_pengumuman| %>
-      <tr>
+      <tr scope="row">
         <td><%= informasi_pengumuman.judul %></td>
         <td><%= informasi_pengumuman.isi %></td>
-        <td><%= link_to 'Show', informasi_pengumuman %></td>
-        <td><%= link_to 'Edit', edit_informasi_pengumuman_path(informasi_pengumuman) %></td>
-        <td><%= link_to 'Destroy', informasi_pengumuman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("eye"), informasi_pengumuman %></td>
+        <td><%= link_to fa_icon("pencil"), edit_informasi_pengumuman_path(informasi_pengumuman) %></td>
+        <td><%= link_to fa_icon("trash"), informasi_pengumuman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

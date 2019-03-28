@@ -41,8 +41,8 @@
           Informasi
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/informasi/berita_terkini">Berita Terkini</a>
-          <a class="dropdown-item" href="/informasi/pengumuman">Pengumuman</a>
+          <%= link_to "Berita Terkini", informasi_berita_terkini_index_path, class: "dropdown-item" %>
+          <%= link_to "Pengumuman", informasi_pengumuman_index_path, class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -50,8 +50,8 @@
           Laporan
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/laporan/penyuluh_agama_katolik">Laporan Penyuluh Agama Katolik</a>
-          <a class="dropdown-item" href="/laporan/kinerja_pegawai_bimkat_sumteng">Laporan Kinerja Pegawai Bimkat Sumteng</a>
+          <%= link_to "Penyuluh Agama Katolik", laporan_penyuluh_agama_katolik_index_path, class: "dropdown-item" %>
+          <%= link_to "Kinerja Pegawai Bimkat Sumteng", laporan_kinerja_pegawai_bimkat_sumteng_index_path, class: "dropdown-item" %>
         </div>
       </li>
     </ul>

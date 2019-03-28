@@ -1,26 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="card">
+  <h1 class="card-header">Laporan Kinerja Pegawai Bimkat Sumteng</h1>
+</div>
 
-<h1>Laporan Kinerja Pegawai Bimkat Sumteng</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Bulan</th>
-      <th>Tahun</th>
-      <th>Tautan</th>
+      <th scope="col">Bulan</th>
+      <th scope="col">Tahun</th>
+      <th scope="col">Tautan</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @laporan_kinerja_pegawai_bimkat_sumteng.each do |laporan_kinerja_pegawai_bimkat_sumteng| %>
-      <tr>
+      <tr scope="row">
         <td><%= laporan_kinerja_pegawai_bimkat_sumteng.bulan %></td>
         <td><%= laporan_kinerja_pegawai_bimkat_sumteng.tahun %></td>
         <td><%= laporan_kinerja_pegawai_bimkat_sumteng.tautan %></td>
-        <td><%= link_to 'Show', laporan_kinerja_pegawai_bimkat_sumteng %></td>
-        <td><%= link_to 'Edit', edit_laporan_kinerja_pegawai_bimkat_sumteng_path(laporan_kinerja_pegawai_bimkat_sumteng) %></td>
-        <td><%= link_to 'Destroy', laporan_kinerja_pegawai_bimkat_sumteng, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("eye"), laporan_kinerja_pegawai_bimkat_sumteng %></td>
+        <td><%= link_to fa_icon("pencil"), edit_laporan_kinerja_pegawai_bimkat_sumteng_path(laporan_kinerja_pegawai_bimkat_sumteng) %></td>
+        <td><%= link_to fa_icon("trash"), laporan_kinerja_pegawai_bimkat_sumteng, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
