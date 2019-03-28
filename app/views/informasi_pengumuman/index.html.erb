@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Informasi Pengumuman</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Judul</th>
+      <th>Isi</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @informasi_pengumuman.each do |informasi_pengumuman| %>
+      <tr>
+        <td><%= informasi_pengumuman.judul %></td>
+        <td><%= informasi_pengumuman.isi %></td>
+        <td><%= link_to 'Show', informasi_pengumuman %></td>
+        <td><%= link_to 'Edit', edit_informasi_pengumuman_path(informasi_pengumuman) %></td>
+        <td><%= link_to 'Destroy', informasi_pengumuman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Informasi Pengumuman', new_informasi_pengumuman_path %>

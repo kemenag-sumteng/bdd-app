@@ -1,0 +1,27 @@
+<%= form_with(model: informasi_pengumuman, local: true) do |form| %>
+  <% if informasi_pengumuman.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(informasi_pengumuman.errors.count, "error") %> prohibited this informasi_pengumuman from being saved:</h2>
+
+      <ul>
+      <% informasi_pengumuman.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :judul %>
+    <%= form.text_field :judul %>
+  </div>
+
+  <div class="field">
+    <%= form.label :isi %>
+    <%= form.text_area :isi %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
