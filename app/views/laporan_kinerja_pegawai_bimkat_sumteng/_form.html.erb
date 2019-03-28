@@ -1,4 +1,4 @@
-<%= form_with(model: laporan_kinerja_pegawai_bimkat_sumteng, local: true) do |form| %>
+<%= bootstrap_form_for(@laporan_kinerja_pegawai_bimkat_sumteng, local: true) do |form| %>
   <% if laporan_kinerja_pegawai_bimkat_sumteng.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(laporan_kinerja_pegawai_bimkat_sumteng.errors.count, "error") %> prohibited this laporan_kinerja_pegawai_bimkat_sumteng from being saved:</h2>
@@ -12,17 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :bulan %>
     <%= form.text_field :bulan %>
   </div>
 
   <div class="field">
-    <%= form.label :tahun %>
     <%= form.text_field :tahun %>
   </div>
 
   <div class="field">
-    <%= form.label :tautan %>
     <%= form.text_field :tautan %>
   </div>
 

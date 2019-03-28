@@ -1,4 +1,4 @@
-<%= form_with(model: informasi_berita_terkini, local: true) do |form| %>
+<%= bootstrap_form_for(@informasi_berita_terkini, local: true) do |form| %>
   <% if informasi_berita_terkini.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(informasi_berita_terkini.errors.count, "error") %> prohibited this informasi_berita_terkini from being saved:</h2>
@@ -12,12 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :judul %>
     <%= form.text_field :judul %>
   </div>
 
   <div class="field">
-    <%= form.label :isi %>
     <%= form.text_area :isi %>
   </div>
 
