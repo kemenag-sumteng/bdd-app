@@ -1,16 +1,12 @@
-<h1 class="card-header"><%= @galeri_foto.judul %></h1>
-
-<div class="card-body">
-	<p>
-	  <strong>Keterangan:</strong>
-	  <%= @galeri_foto.keterangan %>
-	</p>
-
-	<p>
-	  <strong>Berkas:</strong>
-	  <%= @galeri_foto.berkas %>
-	</p>
+<div class="card">
+	<%= image_tag(@galeri_foto.berkas, class: "card-img-top", alt: @galeri_foto.keterangan) %>
+	<h1 class="card-header"><%= @galeri_foto.judul %></h1>
+	<div class="card-body">
+		<p>
+			<strong>Keterangan:</strong>
+			<%= @galeri_foto.keterangan %>
+		</p>
+		<%= link_to 'Edit', edit_galeri_foto_path(@galeri_foto), :class => "btn btn-primary" %>
+		<%= link_to 'Kembali', galeri_foto_index_path, :class => "btn btn-primary" %>
+	</div>
 </div>
-
-<%= link_to 'Edit', edit_galeri_foto_path(@galeri_foto) %> |
-<%= link_to 'Back', galeri_foto_index_path %>
