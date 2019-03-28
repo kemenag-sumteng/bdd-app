@@ -20,7 +20,7 @@
       <td><%= truncate(data_pendidikan_agama_katolik.tautan) %></td>
       <td><%= link_to fa_icon("eye"), data_pendidikan_agama_katolik %></td>
       <td><%= link_to fa_icon("pencil"), edit_data_pendidikan_agama_katolik_path(data_pendidikan_agama_katolik) %></td>
-      <td><%= link_to fa_icon("trash"), data_pendidikan_agama_katolik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to fa_icon("trash"), data_pendidikan_agama_katolik, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Data Pendidikan Agama Katolik', new_data_pendidikan_agama_katolik_path %>
+<%= link_to 'Membuat Data Pendidikan Agama Katolik', new_data_pendidikan_agama_katolik_path %>

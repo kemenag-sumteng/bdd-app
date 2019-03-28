@@ -22,7 +22,7 @@
         <td><%= laporan_penyuluh_agama_katolik.nama_penyuluh %></td>
         <td><%= link_to fa_icon("eye"), laporan_penyuluh_agama_katolik %></td>
         <td><%= link_to fa_icon("pencil"), edit_laporan_penyuluh_agama_katolik_path(laporan_penyuluh_agama_katolik) %></td>
-        <td><%= link_to fa_icon("trash"), laporan_penyuluh_agama_katolik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("trash"), laporan_penyuluh_agama_katolik, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Laporan Penyuluh Agama Katolik', new_laporan_penyuluh_agama_katolik_path %>
+<%= link_to 'Membuat Laporan Penyuluh Agama Katolik', new_laporan_penyuluh_agama_katolik_path %>

@@ -20,7 +20,7 @@
         <td><%= laporan_kinerja_pegawai_bimkat_sumteng.tautan %></td>
         <td><%= link_to fa_icon("eye"), laporan_kinerja_pegawai_bimkat_sumteng %></td>
         <td><%= link_to fa_icon("pencil"), edit_laporan_kinerja_pegawai_bimkat_sumteng_path(laporan_kinerja_pegawai_bimkat_sumteng) %></td>
-        <td><%= link_to fa_icon("trash"), laporan_kinerja_pegawai_bimkat_sumteng, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("trash"), laporan_kinerja_pegawai_bimkat_sumteng, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Laporan Kinerja Pegawai Bimkat Sumteng', new_laporan_kinerja_pegawai_bimkat_sumteng_path %>
+<%= link_to 'Membuat Laporan Kinerja Pegawai Bimkat Sumteng', new_laporan_kinerja_pegawai_bimkat_sumteng_path %>

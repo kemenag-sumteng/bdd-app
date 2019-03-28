@@ -19,7 +19,7 @@
       <td><%= truncate(galeri_foto.berkas) %></td>
       <td><%= link_to fa_icon("eye"), galeri_foto %></td>
       <td><%= link_to fa_icon("pencil"), edit_galeri_foto_path(galeri_foto) %></td>
-      <td><%= link_to fa_icon("trash"), galeri_foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to fa_icon("trash"), galeri_foto, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -27,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Galeri Foto', new_galeri_foto_path %>
+<%= link_to 'Membuat Galeri Foto', new_galeri_foto_path %>

@@ -16,7 +16,7 @@
       <td><%= truncate(galeri_video.berkas) %></td>
       <td><%= link_to fa_icon("eye"), galeri_video %></td>
       <td><%= link_to fa_icon("pencil"), edit_galeri_video_path(galeri_video) %></td>
-      <td><%= link_to fa_icon("trash"), galeri_video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to fa_icon("trash"), galeri_video, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Galeri Video', new_galeri_video_path %>
+<%= link_to 'Membuat Galeri Video', new_galeri_video_path %>
