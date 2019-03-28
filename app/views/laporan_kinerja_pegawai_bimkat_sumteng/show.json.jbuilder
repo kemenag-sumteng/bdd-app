@@ -1,0 +1,1 @@
+json.partial! "laporan_kinerja_pegawai_bimkat_sumteng/laporan_kinerja_pegawai_bimkat_sumteng", laporan_kinerja_pegawai_bimkat_sumteng: @laporan_kinerja_pegawai_bimkat_sumteng

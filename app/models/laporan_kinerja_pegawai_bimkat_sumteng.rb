@@ -1,0 +1,2 @@
+class LaporanKinerjaPegawaiBimkatSumteng < ApplicationRecord
+end

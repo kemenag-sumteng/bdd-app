@@ -1,0 +1,1 @@
+json.array! @laporan_kinerja_pegawai_bimkat_sumteng, partial: 'laporan_kinerja_pegawai_bimkat_sumteng/laporan_kinerja_pegawai_bimkat_sumteng', as: :laporan_kinerja_pegawai_bimkat_sumteng
