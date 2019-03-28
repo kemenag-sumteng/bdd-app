@@ -1,0 +1,32 @@
+<%= form_with(model: galeri_video, local: true) do |form| %>
+  <% if galeri_video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(galeri_video.errors.count, "error") %> prohibited this galeri_video from being saved:</h2>
+
+      <ul>
+      <% galeri_video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :judul %>
+    <%= form.text_field :judul %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keterangan %>
+    <%= form.text_area :keterangan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :berkas %>
+    <%= form.text_field :berkas %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

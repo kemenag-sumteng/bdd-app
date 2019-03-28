@@ -1,0 +1,2 @@
+class GaleriVideo < ApplicationRecord
+end
