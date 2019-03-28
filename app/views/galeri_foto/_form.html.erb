@@ -1,3 +1,4 @@
+<%= render "partial/navigation" %>
 <%= form_with(model: galeri_foto, local: true) do |form| %>
   <% if galeri_foto.errors.any? %>
     <div id="error_explanation">
@@ -10,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="field">
     <%= form.label :judul %>

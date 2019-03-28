@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BddDevApp</title>
+    <title>Bimas Katolik | Kantor Kementerian Agama Kabupaten Sumba Tengah</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +11,7 @@
 
   <body class="bg-light">
     <main role="main" class="container">
+      <%= render "partial/navigation" %>
       <div class="jumbotron">
         <% if notice %>
           <p class="alert alert-success"><%= notice %></p>

@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
+<h1 class="card-header"><%= @galeri_foto.judul %></h1>
 
-<p>
-  <strong>Judul:</strong>
-  <%= @galeri_foto.judul %>
-</p>
+<div class="card-body">
+	<p>
+	  <strong>Keterangan:</strong>
+	  <%= @galeri_foto.keterangan %>
+	</p>
 
-<p>
-  <strong>Keterangan:</strong>
-  <%= @galeri_foto.keterangan %>
-</p>
-
-<p>
-  <strong>Berkas:</strong>
-  <%= @galeri_foto.berkas %>
-</p>
+	<p>
+	  <strong>Berkas:</strong>
+	  <%= @galeri_foto.berkas %>
+	</p>
+</div>
 
 <%= link_to 'Edit', edit_galeri_foto_path(@galeri_foto) %> |
 <%= link_to 'Back', galeri_foto_index_path %>

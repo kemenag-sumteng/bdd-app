@@ -1,14 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h1 class="card-header"><%= @data_pendidikan_agama_katolik.judul %></h1>
 
-<p>
-  <strong>Judul:</strong>
-  <%= @data_pendidikan_agama_katolik.judul %>
-</p>
-
-<p>
-  <strong>Tautan:</strong>
-  <%= @data_pendidikan_agama_katolik.tautan %>
-</p>
+<div class="card-body">
+	<p>
+	  <strong>Tautan:</strong>
+	  <%= @data_pendidikan_agama_katolik.tautan %>
+	</p>
+</div>
 
 <%= link_to 'Edit', edit_data_pendidikan_agama_katolik_path(@data_pendidikan_agama_katolik) %> |
 <%= link_to 'Back', data_pendidikan_agama_katolik_index_path %>
