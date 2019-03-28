@@ -17,10 +17,10 @@
   <% @data_pendidikan_agama_katolik.each do |data_pendidikan_agama_katolik| %>
     <tr scope="row">
       <td><%= data_pendidikan_agama_katolik.judul %></td>
-      <td><%= data_pendidikan_agama_katolik.tautan %></td>
-      <td><%= link_to 'Show', data_pendidikan_agama_katolik %></td>
-      <td><%= link_to 'Edit', edit_data_pendidikan_agama_katolik_path(data_pendidikan_agama_katolik) %></td>
-      <td><%= link_to 'Destroy', data_pendidikan_agama_katolik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= truncate(data_pendidikan_agama_katolik.tautan) %></td>
+      <td><%= link_to fa_icon("eye"), data_pendidikan_agama_katolik %></td>
+      <td><%= link_to fa_icon("pencil"), edit_data_pendidikan_agama_katolik_path(data_pendidikan_agama_katolik) %></td>
+      <td><%= link_to fa_icon("trash"), data_pendidikan_agama_katolik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>

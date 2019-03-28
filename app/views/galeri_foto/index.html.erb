@@ -16,10 +16,10 @@
     <tr scope="row">
       <td><%= galeri_foto.judul %></td>
       <td><%= galeri_foto.keterangan %></td>
-      <td><%= galeri_foto.berkas %></td>
-      <td><%= link_to 'Show', galeri_foto %></td>
-      <td><%= link_to 'Edit', edit_galeri_foto_path(galeri_foto) %></td>
-      <td><%= link_to 'Destroy', galeri_foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= truncate(galeri_foto.berkas) %></td>
+      <td><%= link_to fa_icon("eye"), galeri_foto %></td>
+      <td><%= link_to fa_icon("pencil"), edit_galeri_foto_path(galeri_foto) %></td>
+      <td><%= link_to fa_icon("trash"), galeri_foto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
