@@ -1,4 +1,4 @@
-<%= form_with(model: data_keagamaan_katolik, local: true) do |form| %>
+<%= bootstrap_form_for(@data_keagamaan_katolik, local: true) do |form| %>
   <% if data_keagamaan_katolik.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(data_keagamaan_katolik.errors.count, "error") %> prohibited this data_keagamaan_katolik from being saved:</h2>
@@ -12,16 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :judul %>
     <%= form.text_field :judul %>
   </div>
 
   <div class="field">
-    <%= form.label :tautan %>
     <%= form.text_area :tautan %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Membuat Data Keagamaan Katolik", class: "btn btn-success" %>
   </div>
 <% end %>
