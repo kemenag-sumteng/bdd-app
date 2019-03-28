@@ -1,6 +1,8 @@
-<h1>Editing Galeri Video</h1>
-
-<%= render 'form', galeri_video: @galeri_video %>
-
-<%= link_to 'Show', @galeri_video %> |
-<%= link_to 'Kembali', galeri_video_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Galeri Video</h1>
+  <%= render 'form', galeri_video: @galeri_video %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @galeri_video, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', galeri_video_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

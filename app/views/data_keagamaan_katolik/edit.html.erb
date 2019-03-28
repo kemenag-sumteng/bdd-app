@@ -1,6 +1,8 @@
-<h1>Editing Data Keagamaan Katolik</h1>
-
-<%= render 'form', data_keagamaan_katolik: @data_keagamaan_katolik %>
-
-<%= link_to 'Show', @data_keagamaan_katolik %> |
-<%= link_to 'Kembali', data_keagamaan_katolik_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Data Keagamaan Katolik</h1>
+  <%= render 'form', data_keagamaan_katolik: @data_keagamaan_katolik %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @data_keagamaan_katolik, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', data_keagamaan_katolik_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

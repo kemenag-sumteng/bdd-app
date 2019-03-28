@@ -1,6 +1,8 @@
-<h1>Editing Galeri Foto</h1>
-
-<%= render 'form', galeri_foto: @galeri_foto %>
-
-<%= link_to 'Show', @galeri_foto %> |
-<%= link_to 'Kembali', galeri_foto_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Galeri Foto</h1>
+  <%= render 'form', galeri_foto: @galeri_foto %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @galeri_foto, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', galeri_foto_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

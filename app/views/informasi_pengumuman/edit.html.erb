@@ -1,6 +1,8 @@
-<h1>Editing Informasi Pengumuman</h1>
-
-<%= render 'form', informasi_pengumuman: @informasi_pengumuman %>
-
-<%= link_to 'Show', @informasi_pengumuman %> |
-<%= link_to 'Kembali', informasi_pengumuman_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Informasi Pengumuman</h1>
+  <%= render 'form', informasi_pengumuman: @informasi_pengumuman %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @informasi_pengumuman, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', informasi_pengumuman_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

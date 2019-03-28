@@ -1,6 +1,8 @@
-<h1>Editing Laporan Kinerja Pegawai Bimkat Sumteng</h1>
-
-<%= render 'form', laporan_kinerja_pegawai_bimkat_sumteng: @laporan_kinerja_pegawai_bimkat_sumteng %>
-
-<%= link_to 'Show', @laporan_kinerja_pegawai_bimkat_sumteng %> |
-<%= link_to 'Kembali', laporan_kinerja_pegawai_bimkat_sumteng_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Laporan Kinerja Pegawai Bimkat Sumteng</h1>
+  <%= render 'form', laporan_kinerja_pegawai_bimkat_sumteng: @laporan_kinerja_pegawai_bimkat_sumteng %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @laporan_kinerja_pegawai_bimkat_sumteng, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', laporan_kinerja_pegawai_bimkat_sumteng_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>

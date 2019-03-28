@@ -1,6 +1,8 @@
-<h1>Editing Informasi Berita Terkini</h1>
-
-<%= render 'form', informasi_berita_terkini: @informasi_berita_terkini %>
-
-<%= link_to 'Show', @informasi_berita_terkini %> |
-<%= link_to 'Kembali', informasi_berita_terkini_index_path %>
+<div class="card">
+  <h1 class="card-header">Mengubah Informasi Berita Terkini</h1>
+  <%= render 'form', informasi_berita_terkini: @informasi_berita_terkini %>
+  <div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Tampilkan', @informasi_berita_terkini, :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', informasi_berita_terkini_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>
