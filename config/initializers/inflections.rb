@@ -23,4 +23,8 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'tentang', 'tentang'
 	inflect.irregular 'foto', 'foto'
 	inflect.irregular 'video', 'video'
+	inflect.irregular 'berita', 'berita'
+	inflect.irregular 'terkini', 'terkini'
+	inflect.irregular 'pengumuman', 'pengumuman'
+	inflect.irregular 'laporan', 'laporan'
 end
