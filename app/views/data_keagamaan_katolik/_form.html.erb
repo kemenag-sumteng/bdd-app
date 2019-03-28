@@ -10,16 +10,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.text_field :judul %>
-  </div>
-
-  <div class="field">
-    <%= form.text_area :tautan %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Membuat Data Keagamaan Katolik", class: "btn btn-success" %>
+  <div class="card-body">
+    <div class="field">
+      <%= form.text_field :judul %>
+    </div>
+    <div class="field">
+      <%= form.text_area :tautan %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Membuat Data Keagamaan Katolik", class: "btn btn-success" %>
+    </div>
   </div>
 <% end %>

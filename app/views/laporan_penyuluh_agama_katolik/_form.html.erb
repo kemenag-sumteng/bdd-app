@@ -10,24 +10,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.text_field :bulan %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :tahun %>
-  </div>
-
-  <div class="field">
-    <%= form.text_area :tautan %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :nama_penyuluh %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Membuat Laporan Penyuluh Agama Katolik", class: "btn btn-success" %>
+  <div class="card-body">
+    <div class="field">
+      <%= form.text_field :bulan %>
+    </div>
+    <div class="field">
+      <%= form.text_field :tahun %>
+    </div>
+    <div class="field">
+      <%= form.text_area :tautan %>
+    </div>
+    <div class="field">
+      <%= form.text_field :nama_penyuluh %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Membuat Laporan Penyuluh Agama Katolik", class: "btn btn-success" %>
+    </div>
   </div>
 <% end %>

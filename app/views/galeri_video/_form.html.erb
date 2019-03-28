@@ -11,20 +11,18 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.text_field :judul %>
-  </div>
-
-  <div class="field">
-    <%= form.text_area :keterangan %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :berkas %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Membuat Galeri Video", class: "btn btn-success" %>
+  <div class="card-body">
+    <div class="field">
+      <%= form.text_field :judul %>
+    </div>
+    <div class="field">
+      <%= form.text_area :keterangan %>
+    </div>
+    <div class="field">
+      <%= form.text_field :berkas %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Membuat Galeri Video", class: "btn btn-success" %>
+    </div>
   </div>
 <% end %>

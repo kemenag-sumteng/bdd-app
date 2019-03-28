@@ -1,4 +1,3 @@
-<%= render "partial/navigation" %>
 <%= bootstrap_form_for(@galeri_foto, local: true) do |form| %>
   <% if galeri_foto.errors.any? %>
     <div id="error_explanation">
@@ -11,21 +10,18 @@
       </ul>
     </div>
   <% end %>
-
-
-  <div class="field">
-    <%= form.text_field :judul %>
-  </div>
-
-  <div class="field">
-    <%= form.text_area :keterangan %>
-  </div>
-
-  <div class="field">
-    <%= form.text_field :berkas %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Membuat Galeri Foto", class: "btn btn-success" %>
+  <div class="card-body">
+    <div class="field">
+      <%= form.text_field :judul %>
+    </div>
+    <div class="field">
+      <%= form.text_area :keterangan %>
+    </div>
+    <div class="field">
+      <%= form.text_field :berkas %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Membuat Galeri Foto", class: "btn btn-success" %>
+    </div>
   </div>
 <% end %>
