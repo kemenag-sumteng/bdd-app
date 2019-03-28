@@ -1,0 +1,37 @@
+<%= form_with(model: laporan_penyuluh_agama_katolik, local: true) do |form| %>
+  <% if laporan_penyuluh_agama_katolik.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(laporan_penyuluh_agama_katolik.errors.count, "error") %> prohibited this laporan_penyuluh_agama_katolik from being saved:</h2>
+
+      <ul>
+      <% laporan_penyuluh_agama_katolik.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :bulan %>
+    <%= form.text_field :bulan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tahun %>
+    <%= form.text_field :tahun %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tautan %>
+    <%= form.text_area :tautan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nama_penyuluh %>
+    <%= form.text_field :nama_penyuluh %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
