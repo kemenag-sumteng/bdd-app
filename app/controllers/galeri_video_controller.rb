@@ -28,7 +28,7 @@ class GaleriVideoController < ApplicationController
 
     respond_to do |format|
       if @galeri_video.save
-        format.html { redirect_to @galeri_video, notice: 'Galeri video was successfully created.' }
+        format.html { redirect_to @galeri_video, notice: 'Galeri video telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @galeri_video }
       else
         format.html { render :new }

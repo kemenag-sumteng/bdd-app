@@ -28,7 +28,7 @@ class InformasiBeritaTerkiniController < ApplicationController
 
     respond_to do |format|
       if @informasi_berita_terkini.save
-        format.html { redirect_to @informasi_berita_terkini, notice: 'Informasi berita terkini was successfully created.' }
+        format.html { redirect_to @informasi_berita_terkini, notice: 'Informasi berita terkini telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @informasi_berita_terkini }
       else
         format.html { render :new }

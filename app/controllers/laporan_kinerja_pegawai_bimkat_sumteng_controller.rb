@@ -28,7 +28,7 @@ class LaporanKinerjaPegawaiBimkatSumtengController < ApplicationController
 
     respond_to do |format|
       if @laporan_kinerja_pegawai_bimkat_sumteng.save
-        format.html { redirect_to @laporan_kinerja_pegawai_bimkat_sumteng, notice: 'Laporan kinerja pegawai bimkat sumteng was successfully created.' }
+        format.html { redirect_to @laporan_kinerja_pegawai_bimkat_sumteng, notice: 'Laporan kinerja pegawai bimkat sumteng telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @laporan_kinerja_pegawai_bimkat_sumteng }
       else
         format.html { render :new }

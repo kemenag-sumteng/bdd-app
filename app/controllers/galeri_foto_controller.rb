@@ -28,7 +28,7 @@ class GaleriFotoController < ApplicationController
 
     respond_to do |format|
       if @galeri_foto.save
-        format.html { redirect_to @galeri_foto, notice: 'Galeri foto was successfully created.' }
+        format.html { redirect_to @galeri_foto, notice: 'Galeri foto telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @galeri_foto }
       else
         format.html { render :new }

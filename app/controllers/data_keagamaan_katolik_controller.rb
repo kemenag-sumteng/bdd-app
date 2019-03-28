@@ -28,7 +28,7 @@ class DataKeagamaanKatolikController < ApplicationController
 
     respond_to do |format|
       if @data_keagamaan_katolik.save
-        format.html { redirect_to @data_keagamaan_katolik, notice: 'Data keagamaan katolik was successfully created.' }
+        format.html { redirect_to @data_keagamaan_katolik, notice: 'Data keagamaan katolik telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @data_keagamaan_katolik }
       else
         format.html { render :new }

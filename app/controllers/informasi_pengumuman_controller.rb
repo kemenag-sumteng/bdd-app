@@ -28,7 +28,7 @@ class InformasiPengumumanController < ApplicationController
 
     respond_to do |format|
       if @informasi_pengumuman.save
-        format.html { redirect_to @informasi_pengumuman, notice: 'Informasi pengumuman was successfully created.' }
+        format.html { redirect_to @informasi_pengumuman, notice: 'Informasi pengumuman telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @informasi_pengumuman }
       else
         format.html { render :new }

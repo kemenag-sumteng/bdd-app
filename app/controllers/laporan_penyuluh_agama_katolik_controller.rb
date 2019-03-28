@@ -28,7 +28,7 @@ class LaporanPenyuluhAgamaKatolikController < ApplicationController
 
     respond_to do |format|
       if @laporan_penyuluh_agama_katolik.save
-        format.html { redirect_to @laporan_penyuluh_agama_katolik, notice: 'Laporan penyuluh agama katolik was successfully created.' }
+        format.html { redirect_to @laporan_penyuluh_agama_katolik, notice: 'Laporan penyuluh agama katolik telah berhasil dibuat.' }
         format.json { render :show, status: :created, location: @laporan_penyuluh_agama_katolik }
       else
         format.html { render :new }
