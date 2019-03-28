@@ -56,7 +56,7 @@ class GaleriFotoController < ApplicationController
   def destroy
     @galeri_foto.destroy
     respond_to do |format|
-      format.html { redirect_to galeri_foto_index_url, notice: 'Galeri foto was successfully destroyed.' }
+      format.html { redirect_to galeri_foto_index_url, notice: 'Galeri foto telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end

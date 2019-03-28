@@ -56,7 +56,7 @@ class DataKeagamaanKatolikController < ApplicationController
   def destroy
     @data_keagamaan_katolik.destroy
     respond_to do |format|
-      format.html { redirect_to data_keagamaan_katolik_index_url, notice: 'Data keagamaan katolik was successfully destroyed.' }
+      format.html { redirect_to data_keagamaan_katolik_index_url, notice: 'Data keagamaan katolik telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end

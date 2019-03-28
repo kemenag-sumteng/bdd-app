@@ -56,7 +56,7 @@ class LaporanPenyuluhAgamaKatolikController < ApplicationController
   def destroy
     @laporan_penyuluh_agama_katolik.destroy
     respond_to do |format|
-      format.html { redirect_to laporan_penyuluh_agama_katolik_index_url, notice: 'Laporan penyuluh agama katolik was successfully destroyed.' }
+      format.html { redirect_to laporan_penyuluh_agama_katolik_index_url, notice: 'Laporan penyuluh agama katolik telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end

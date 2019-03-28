@@ -56,7 +56,7 @@ class InformasiPengumumanController < ApplicationController
   def destroy
     @informasi_pengumuman.destroy
     respond_to do |format|
-      format.html { redirect_to informasi_pengumuman_index_url, notice: 'Informasi pengumuman was successfully destroyed.' }
+      format.html { redirect_to informasi_pengumuman_index_url, notice: 'Informasi pengumuman telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end

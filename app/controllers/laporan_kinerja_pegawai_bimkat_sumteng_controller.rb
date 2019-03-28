@@ -56,7 +56,7 @@ class LaporanKinerjaPegawaiBimkatSumtengController < ApplicationController
   def destroy
     @laporan_kinerja_pegawai_bimkat_sumteng.destroy
     respond_to do |format|
-      format.html { redirect_to laporan_kinerja_pegawai_bimkat_sumteng_index_url, notice: 'Laporan kinerja pegawai bimkat sumteng was successfully destroyed.' }
+      format.html { redirect_to laporan_kinerja_pegawai_bimkat_sumteng_index_url, notice: 'Laporan kinerja pegawai bimkat sumteng telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end

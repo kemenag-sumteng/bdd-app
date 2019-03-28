@@ -56,7 +56,7 @@ class DataPendidikanAgamaKatolikController < ApplicationController
   def destroy
     @data_pendidikan_agama_katolik.destroy
     respond_to do |format|
-      format.html { redirect_to data_pendidikan_agama_katolik_index_url, notice: 'Data pendidikan agama katolik was successfully destroyed.' }
+      format.html { redirect_to data_pendidikan_agama_katolik_index_url, notice: 'Data pendidikan agama katolik telah berhasil dihapus.' }
       format.json { head :no_content }
     end
   end
