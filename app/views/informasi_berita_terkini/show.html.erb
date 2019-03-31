@@ -5,9 +5,12 @@
 			<strong>Isi:</strong>
 			<%= @informasi_berita_terkini.isi %>
 		</p>
+		<% if @informasi_berita_terkini.lampiran == "" %>
+		<% else %>
 		<p>
-			<a class="btn btn-success" href="<%= @informasi_berita_terkini.lampiran %>" rel="nofollow"><%= fa_icon("cloud-download") %> Unduh</a>
+			<a class="btn btn-success" href="https://drive.google.com/file/d/<%= @informasi_berita_terkini.lampiran %>/preview" target="_blank"><%= fa_icon("external-link") %> Buka lampiran di tab baru</a>
 		</p>
+		<% end %>
 	</div>
 	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
   	<%= link_to 'Edit', edit_informasi_berita_terkini_path(@informasi_berita_terkini), :class => "btn btn-primary" %>
