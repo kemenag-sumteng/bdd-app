@@ -1,15 +1,4 @@
 <%= bootstrap_form_for(@data_keagamaan_katolik, local: true) do |form| %>
-  <% if data_keagamaan_katolik.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(data_keagamaan_katolik.errors.count, "error") %> prohibited this data_keagamaan_katolik from being saved:</h2>
-
-      <ul>
-      <% data_keagamaan_katolik.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="card-body">
     <div class="field">
       <%= form.text_field :judul %>

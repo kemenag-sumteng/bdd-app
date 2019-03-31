@@ -1,21 +1,13 @@
 <%= bootstrap_form_for(@informasi_pengumuman, local: true) do |form| %>
-  <% if informasi_pengumuman.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(informasi_pengumuman.errors.count, "error") %> prohibited this informasi_pengumuman from being saved:</h2>
-
-      <ul>
-      <% informasi_pengumuman.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="card-body">
     <div class="field">
       <%= form.text_field :judul %>
     </div>
     <div class="field">
       <%= form.text_area :isi %>
+    </div>
+    <div class="field">
+      <%= form.text_area :lampiran %>
     </div>
     <div class="actions">
       <%= form.submit "Membuat Informasi Pengumuman", class: "btn btn-success" %>

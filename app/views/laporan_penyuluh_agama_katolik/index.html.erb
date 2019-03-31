@@ -5,8 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Bulan</th>
-      <th scope="col">Tahun</th>
+      <th scope="col">Judul</th>
       <th scope="col">Tautan</th>
       <th scope="col">Nama penyuluh</th>
       <th colspan="3"></th>
@@ -16,8 +15,7 @@
   <tbody>
     <% @laporan_penyuluh_agama_katolik.each do |laporan_penyuluh_agama_katolik| %>
       <tr scope="row">
-        <td><%= laporan_penyuluh_agama_katolik.bulan %></td>
-        <td><%= laporan_penyuluh_agama_katolik.tahun %></td>
+        <td><%= laporan_penyuluh_agama_katolik.judul %></td>
         <td><%= laporan_penyuluh_agama_katolik.tautan %></td>
         <td><%= laporan_penyuluh_agama_katolik.nama_penyuluh %></td>
         <td><%= link_to fa_icon("eye"), laporan_penyuluh_agama_katolik %></td>
