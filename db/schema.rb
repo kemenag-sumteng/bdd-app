@@ -37,14 +37,6 @@ ActiveRecord::Schema.define(version: 2019_03_28_140258) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "galeri_fotos", force: :cascade do |t|
-    t.string "judul"
-    t.text "keterangan"
-    t.string "berkas"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "galeri_video", force: :cascade do |t|
     t.string "judul"
     t.text "keterangan"
@@ -68,14 +60,6 @@ ActiveRecord::Schema.define(version: 2019_03_28_140258) do
   end
 
   create_table "laporan_kinerja_pegawai_bimkat_sumteng", force: :cascade do |t|
-    t.string "bulan"
-    t.string "tahun"
-    t.string "tautan"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "laporan_kinerja_pegawai_bimkat_sumtengs", force: :cascade do |t|
     t.string "bulan"
     t.string "tahun"
     t.string "tautan"
