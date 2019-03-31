@@ -1,0 +1,2 @@
+class LampiranController < ApplicationController
+end

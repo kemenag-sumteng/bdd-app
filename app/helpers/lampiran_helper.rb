@@ -1,0 +1,2 @@
+module LampiranHelper
+end
