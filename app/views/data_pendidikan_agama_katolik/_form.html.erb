@@ -1,15 +1,4 @@
 <%= bootstrap_form_for(@data_pendidikan_agama_katolik, local: true) do |form| %>
-  <% if data_pendidikan_agama_katolik.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(data_pendidikan_agama_katolik.errors.count, "error") %> prohibited this data_pendidikan_agama_katolik from being saved:</h2>
-
-      <ul>
-      <% data_pendidikan_agama_katolik.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="card-body">
     <div class="field">
       <%= form.text_field :judul %>

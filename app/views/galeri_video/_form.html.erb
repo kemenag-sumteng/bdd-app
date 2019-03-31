@@ -1,16 +1,4 @@
-<%= render "partial/navigation" %>
 <%= bootstrap_form_for(@galeri_video, local: true) do |form| %>
-  <% if galeri_video.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(galeri_video.errors.count, "error") %> prohibited this galeri_video from being saved:</h2>
-
-      <ul>
-      <% galeri_video.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
   <div class="card-body">
     <div class="field">
       <%= form.text_field :judul %>
