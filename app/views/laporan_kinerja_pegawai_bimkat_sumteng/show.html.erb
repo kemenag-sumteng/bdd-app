@@ -1,9 +1,8 @@
 <div class="card">
-	<h1 class="card-header"><%= @laporan_kinerja_pegawai_bimkat_sumteng.bulan %> <%= @laporan_kinerja_pegawai_bimkat_sumteng.tahun %></h1>
+	<h1 class="card-header"><%= @laporan_kinerja_pegawai_bimkat_sumteng.judul %></h1>
 	<div class="card-body">
 		<p>
 			<iframe src="https://drive.google.com/file/d/<%= @laporan_kinerja_pegawai_bimkat_sumteng.tautan %>/preview" style="width:1004px; height:787px;" frameborder="0"></iframe>
-			<a class="btn btn-success" href="https://drive.google.com/uc?authuser=0&id=<%= @laporan_kinerja_pegawai_bimkat_sumteng.tautan %>&export=download" rel="nofollow"><%= fa_icon("cloud-download") %> <%= @laporan_kinerja_pegawai_bimkat_sumteng.tahun %></a>
 		</p>
 	</div>
 	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
