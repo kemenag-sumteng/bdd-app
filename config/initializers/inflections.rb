@@ -28,4 +28,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'pengumuman', 'pengumuman'
 	inflect.irregular 'laporan', 'laporan'
 	inflect.irregular 'sumteng', 'sumteng'
+	inflect.irregular 'lampiran', 'lampiran'
 end
