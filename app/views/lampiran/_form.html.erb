@@ -1,0 +1,21 @@
+<%= bootstrap_form_for(@informasi_berita_terkini, local: true) do |form| %>
+  <% if lampiran.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lampiran.errors.count, "error") %> prohibited this lampiran from being saved:</h2>
+
+      <ul>
+      <% lampiran.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card-body">
+    <div class="field">
+      <%= form.text_field :tautan %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Membuat Informasi Pengumuman", class: "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
