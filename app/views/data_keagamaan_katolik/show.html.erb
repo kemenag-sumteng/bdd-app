@@ -2,8 +2,8 @@
 	<h1 class="card-header"><%= @data_keagamaan_katolik.judul %></h1>
 	<div class="card-body">
 		<p>
-			<strong>Tautan:</strong>
-			<%= @data_keagamaan_katolik.tautan %>
+			<iframe src="https://drive.google.com/file/d/<%= @data_keagamaan_katolik.tautan %>/preview" style="width:1004px; height:787px;" frameborder="0"></iframe>
+			<a class="btn btn-success" href="https://drive.google.com/uc?authuser=0&id=<%= @data_keagamaan_katolik.tautan %>&export=download" rel="nofollow"><%= fa_icon("cloud-download") %> <%= @data_keagamaan_katolik.judul %></a>
 		</p>
 	</div>
 	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
