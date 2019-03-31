@@ -69,6 +69,6 @@ class InformasiBeritaTerkiniController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informasi_berita_terkini_params
-      params.require(:informasi_berita_terkini).permit(:judul, :isi)
+      params.require(:informasi_berita_terkini).permit(:judul, :isi, :lampiran)
     end
 end
