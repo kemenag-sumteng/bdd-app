@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_31_072408) do
+ActiveRecord::Schema.define(version: 2019_03_31_091912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_03_31_072408) do
     t.text "isi"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "lampiran"
   end
 
   create_table "informasi_pengumuman", force: :cascade do |t|
@@ -57,6 +58,16 @@ ActiveRecord::Schema.define(version: 2019_03_31_072408) do
     t.text "isi"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "lampiran", force: :cascade do |t|
+    t.text "tautan"
+    t.bigint "informasi_berita_terkini_id"
+    t.bigint "informasi_pengumuman_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["informasi_berita_terkini_id"], name: "index_lampiran_on_informasi_berita_terkini_id"
+    t.index ["informasi_pengumuman_id"], name: "index_lampiran_on_informasi_pengumuman_id"
   end
 
   create_table "laporan_kinerja_pegawai_bimkat_sumteng", force: :cascade do |t|
@@ -74,4 +85,6 @@ ActiveRecord::Schema.define(version: 2019_03_31_072408) do
     t.string "judul"
   end
 
+  add_foreign_key "lampiran", "informasi_berita_terkini"
+  add_foreign_key "lampiran", "informasi_pengumuman"
 end
