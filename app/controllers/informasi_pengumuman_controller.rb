@@ -69,6 +69,6 @@ class InformasiPengumumanController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def informasi_pengumuman_params
-      params.require(:informasi_pengumuman).permit(:judul, :isi)
+      params.require(:informasi_pengumuman).permit(:judul, :isi, :lampiran)
     end
 end
