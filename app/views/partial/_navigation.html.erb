@@ -54,6 +54,20 @@
           <%= link_to "Kinerja Pegawai Bimkat Sumteng", laporan_kinerja_pegawai_bimkat_sumteng_index_path, class: "dropdown-item" %>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Akun
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <% if current_pemakai %>
+          <%= link_to 'Edit Akun', edit_pemakai_registration_path, class: "dropdown-item" %>
+          <%= link_to 'Keluar', destroy_pemakai_session_path, method: :delete, class: "dropdown-item"  %>
+        <% else %>
+          <%= link_to 'Masuk', new_pemakai_session_path, class: "dropdown-item" %>
+          <%= link_to 'Daftar', new_pemakai_registration_path, class: "dropdown-item" %>
+        <% end %>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>
