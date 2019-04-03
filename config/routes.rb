@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :pemakai
+  devise_scope :pemakai do
+    get 'masuk_web_bimkat_sumteng', to: 'devise/sessions#new'
+  end
   resources :laporan_kinerja_pegawai_bimkat_sumteng
   resources :laporan_penyuluh_agama_katolik
   resources :informasi_pengumuman
