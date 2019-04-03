@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :pemakai
   resources :laporan_kinerja_pegawai_bimkat_sumteng
   resources :laporan_penyuluh_agama_katolik
   resources :informasi_pengumuman
