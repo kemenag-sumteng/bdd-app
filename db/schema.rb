@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_044602) do
+ActiveRecord::Schema.define(version: 2019_04_10_141148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 2019_04_10_044602) do
     t.string "nama"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "pemakai_id"
-    t.index ["pemakai_id"], name: "index_fungsi_on_pemakai_id"
   end
 
   create_table "galeri_foto", force: :cascade do |t|
@@ -120,13 +118,14 @@ ActiveRecord::Schema.define(version: 2019_04_10_044602) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nama"
+    t.bigint "fungsi_id"
     t.index ["email"], name: "index_pemakai_on_email", unique: true
+    t.index ["fungsi_id"], name: "index_pemakai_on_fungsi_id"
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
   end
 
   add_foreign_key "data_keagamaan_katolik", "pemakai"
   add_foreign_key "data_pendidikan_agama_katolik", "pemakai"
-  add_foreign_key "fungsi", "pemakai"
   add_foreign_key "galeri_foto", "pemakai"
   add_foreign_key "galeri_video", "pemakai"
   add_foreign_key "informasi_berita_terkini", "pemakai"
@@ -135,4 +134,5 @@ ActiveRecord::Schema.define(version: 2019_04_10_044602) do
   add_foreign_key "lampiran", "informasi_pengumuman"
   add_foreign_key "laporan_kinerja_pegawai_bimkat_sumteng", "pemakai"
   add_foreign_key "laporan_penyuluh_agama_katolik", "pemakai"
+  add_foreign_key "pemakai", "fungsi"
 end
