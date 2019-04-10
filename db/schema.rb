@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_042142) do
+ActiveRecord::Schema.define(version: 2019_04_10_044602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.text "tautan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_data_keagamaan_katolik_on_pemakai_id"
   end
 
   create_table "data_pendidikan_agama_katolik", force: :cascade do |t|
@@ -27,12 +29,16 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.text "tautan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_data_pendidikan_agama_katolik_on_pemakai_id"
   end
 
   create_table "fungsi", force: :cascade do |t|
     t.string "nama"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_fungsi_on_pemakai_id"
   end
 
   create_table "galeri_foto", force: :cascade do |t|
@@ -41,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.string "berkas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_galeri_foto_on_pemakai_id"
   end
 
   create_table "galeri_video", force: :cascade do |t|
@@ -49,6 +57,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.string "berkas"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_galeri_video_on_pemakai_id"
   end
 
   create_table "informasi_berita_terkini", force: :cascade do |t|
@@ -57,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lampiran"
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_informasi_berita_terkini_on_pemakai_id"
   end
 
   create_table "informasi_pengumuman", force: :cascade do |t|
@@ -65,6 +77,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lampiran"
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_informasi_pengumuman_on_pemakai_id"
   end
 
   create_table "lampiran", force: :cascade do |t|
@@ -83,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.datetime "updated_at", null: false
     t.string "judul"
     t.string "nama_pegawai"
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_laporan_kinerja_pegawai_bimkat_sumteng_on_pemakai_id"
   end
 
   create_table "laporan_penyuluh_agama_katolik", force: :cascade do |t|
@@ -91,6 +107,8 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "judul"
+    t.bigint "pemakai_id"
+    t.index ["pemakai_id"], name: "index_laporan_penyuluh_agama_katolik_on_pemakai_id"
   end
 
   create_table "pemakai", force: :cascade do |t|
@@ -106,6 +124,15 @@ ActiveRecord::Schema.define(version: 2019_04_10_042142) do
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "data_keagamaan_katolik", "pemakai"
+  add_foreign_key "data_pendidikan_agama_katolik", "pemakai"
+  add_foreign_key "fungsi", "pemakai"
+  add_foreign_key "galeri_foto", "pemakai"
+  add_foreign_key "galeri_video", "pemakai"
+  add_foreign_key "informasi_berita_terkini", "pemakai"
+  add_foreign_key "informasi_pengumuman", "pemakai"
   add_foreign_key "lampiran", "informasi_berita_terkini"
   add_foreign_key "lampiran", "informasi_pengumuman"
+  add_foreign_key "laporan_kinerja_pegawai_bimkat_sumteng", "pemakai"
+  add_foreign_key "laporan_penyuluh_agama_katolik", "pemakai"
 end
