@@ -15,6 +15,7 @@ Fungsi.create!([
 	{nama: "Pegawai Pendakat"},
 	{nama: "Penyuluh Pendakat"},
 	{nama: "Kasie Pendakat"},
+	{nama: "Pengunjung"},
 	{nama: "Admin"}
 ])
 
@@ -27,7 +28,7 @@ Pemakai.create!([
 	{email: "pegawai_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 4},
 	{email: "penyuluh_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 5},
 	{email: "kasie_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 6},
-	{email: "admin@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 7}
+	{email: "admin@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 8}
 ])
 
 puts "Berhasil membuat #{Pemakai.count} pemakai"

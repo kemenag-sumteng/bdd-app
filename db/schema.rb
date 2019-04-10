@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_141148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nama"
-    t.bigint "fungsi_id"
+    t.bigint "fungsi_id", default: 7
     t.index ["email"], name: "index_pemakai_on_email", unique: true
     t.index ["fungsi_id"], name: "index_pemakai_on_fungsi_id"
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
