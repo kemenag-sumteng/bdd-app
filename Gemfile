@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+# CanCan
+gem 'cancancan'
+# PaperTrail
+gem 'paper_trail'
+# RailsAdmin
+gem 'rails_admin', '~> 1.3'
 # Devise
 gem 'devise'
 # Bootstrap
