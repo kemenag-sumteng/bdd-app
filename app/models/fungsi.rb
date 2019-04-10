@@ -1,0 +1,2 @@
+class Fungsi < ApplicationRecord
+end
