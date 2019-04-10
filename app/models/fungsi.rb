@@ -1,3 +1,3 @@
 class Fungsi < ApplicationRecord
-	belongs_to :pemakai
+	has_many :pemakai
 end
