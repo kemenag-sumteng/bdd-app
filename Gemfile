@@ -7,6 +7,7 @@ ruby '2.5.3'
 gem 'cancancan'
 # PaperTrail
 gem 'paper_trail'
+gem 'paper_trail-association_tracking'
 # RailsAdmin
 gem 'rails_admin', '~> 1.3'
 # Devise
