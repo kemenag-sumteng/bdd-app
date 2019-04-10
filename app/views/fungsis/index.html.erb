@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fungsis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nama</th>
+      <th>String</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fungsis.each do |fungsi| %>
+      <tr>
+        <td><%= fungsi.nama %></td>
+        <td><%= fungsi.string %></td>
+        <td><%= link_to 'Show', fungsi %></td>
+        <td><%= link_to 'Edit', edit_fungsi_path(fungsi) %></td>
+        <td><%= link_to 'Destroy', fungsi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fungsi', new_fungsi_path %>

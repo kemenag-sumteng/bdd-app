@@ -1,0 +1,2 @@
+module FungsisHelper
+end
