@@ -1,27 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="card">
+  <h1 class="card-header">Daftar Fungsi</h1>
+</div>
 
-<h1>Fungsi</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Nama</th>
+      <th scope="col">Nama</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @fungsi.each do |fungsi| %>
-      <tr>
-        <td><%= fungsi.nama %></td>
-        <td><%= link_to 'Show', fungsi %></td>
-        <td><%= link_to 'Edit', edit_fungsi_path(fungsi) %></td>
-        <td><%= link_to 'Destroy', fungsi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @fungsi.each do |fungsi| %>
+    <tr scope="row">
+      <td><%= fungsi.nama %></td>
+      <td><%= link_to fa_icon("eye"), fungsi %></td>
+      <td><%= link_to fa_icon("pencil"), edit_fungsi_path(fungsi) %></td>
+      <td><%= link_to fa_icon("trash"), fungsi, method: :delete, data: { confirm: 'Anda yakin?' } %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Fungsi', new_fungsi_path %>
+<%= link_to 'Membuat Fungsi', new_fungsi_path, :class => "btn btn-primary" %>
