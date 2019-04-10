@@ -30,4 +30,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'sumteng', 'sumteng'
 	inflect.irregular 'lampiran', 'lampiran'
 	inflect.irregular 'pemakai', 'pemakai'
+	inflect.irregular 'fungsi', 'fungsi'
 end
