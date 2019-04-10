@@ -30,5 +30,38 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    # Rails Admin setup
+    can :access, :rails_admin   # grant access to rails_admin
+    can :read, :dashboard       # grant access to the dashboard
+
+    # Ability for everyone
+    pemakai ||= Pemakai.new # in case of guest
+    can :read, DataKeagamaanKatolik
+    can :read, DataPendidikanAgamaKatolik
+    can :read, GaleriFoto
+    can :read, GaleriVideo
+    can :read, InformasiBeritaTerkini
+    can :read, InformasiPengumuman
+
+    if pemakai.fungsi_id === 7
+      can :manage, :all
+    elsif pemakai.fungsi_id === 1
+      can :manage, DataPendidikanAgamaKatolik
+      can :manage, GaleriFoto
+      can :manage, GaleriVideo
+      can :manage, InformasiBeritaTerkini
+      can :manage, InformasiPengumuman
+      can :manage, LaporanKinerjaPegawaiBimkatSumteng
+    elsif pemakai.fungsi_id === 3
+      can :manage, DataPendidikanAgamaKatolik
+      can :manage, GaleriFoto
+      can :manage, GaleriVideo
+      can :manage, InformasiBeritaTerkini
+      can :manage, InformasiPengumuman
+      can :manage, LaporanKinerjaPegawaiBimkatSumteng
+    end
+
+
   end
 end
