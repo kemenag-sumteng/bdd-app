@@ -8,27 +8,15 @@
 puts ""
 puts "Seed database"
 puts ""
-Fungsi.create!([
-	{nama: "Pegawai Pendakat"},
-	{nama: "Guru Pendakat"},
-	{nama: "Penyelenggara Pendakat"},
-	{nama: "Pegawai Pendakat"},
-	{nama: "Penyuluh Pendakat"},
-	{nama: "Kasie Pendakat"},
-	{nama: "Pengunjung"},
-	{nama: "Admin"}
-])
-
-puts "Berhasil membuat #{Fungsi.count} fungsi"
 
 Pemakai.create!([
-	{email: "pegawai_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 1},
-	{email: "guru_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 2},
-	{email: "penyelenggara_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 3},
-	{email: "pegawai_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 4},
-	{email: "penyuluh_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 5},
-	{email: "kasie_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 6},
-	{email: "admin@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty", fungsi_id: 8}
+	{email: "pegawai_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "guru_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "penyelenggara_pendakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "pegawai_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "penyuluh_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "kasie_urakat@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"},
+	{email: "admin@kemenagsumteng.go.id", password: "qwerty", password_confirmation: "qwerty"}
 ])
 
 puts "Berhasil membuat #{Pemakai.count} pemakai"

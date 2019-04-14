@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_141148) do
+ActiveRecord::Schema.define(version: 2019_04_14_034911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_141148) do
     t.datetime "updated_at", null: false
     t.string "nama"
     t.bigint "fungsi_id", default: 7
+    t.string "fungsi", default: "Pengunjung"
     t.index ["email"], name: "index_pemakai_on_email", unique: true
     t.index ["fungsi_id"], name: "index_pemakai_on_fungsi_id"
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
