@@ -7,7 +7,6 @@ class Pemakai < ApplicationRecord
   has_many :informasi_pengumuman
   has_many :laporan_kinerja_pegawai_bimkat_sumteng
   has_many :laporan_penyuluh_agama_katolik
-  belongs_to :fungsi
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
