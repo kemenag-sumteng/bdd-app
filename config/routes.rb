@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :laporan_guru_agama_katolik
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :pemakai, :controllers => {:registrations => "registrations"}
   devise_scope :pemakai do
