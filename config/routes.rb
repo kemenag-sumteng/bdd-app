@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :fungsi
   devise_for :pemakai, :controllers => {:registrations => "registrations"}
   devise_scope :pemakai do
     get 'masuk_web_bimkat_sumteng', to: 'devise/sessions#new'
