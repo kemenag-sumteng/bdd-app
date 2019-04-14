@@ -135,5 +135,4 @@ ActiveRecord::Schema.define(version: 2019_04_14_034911) do
   add_foreign_key "lampiran", "informasi_pengumuman"
   add_foreign_key "laporan_kinerja_pegawai_bimkat_sumteng", "pemakai"
   add_foreign_key "laporan_penyuluh_agama_katolik", "pemakai"
-  add_foreign_key "pemakai", "fungsi"
 end
