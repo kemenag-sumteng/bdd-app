@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_034911) do
+ActiveRecord::Schema.define(version: 2019_04_14_050348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 2019_04_14_034911) do
     t.index ["informasi_pengumuman_id"], name: "index_lampiran_on_informasi_pengumuman_id"
   end
 
+  create_table "laporan_guru_agama_katolik", force: :cascade do |t|
+    t.string "tautan"
+    t.string "nama_guru"
+    t.string "judul"
+    t.bigint "pemakai_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pemakai_id"], name: "index_laporan_guru_agama_katolik_on_pemakai_id"
+  end
+
   create_table "laporan_kinerja_pegawai_bimkat_sumteng", force: :cascade do |t|
     t.string "tautan"
     t.datetime "created_at", null: false
@@ -133,6 +143,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_034911) do
   add_foreign_key "informasi_pengumuman", "pemakai"
   add_foreign_key "lampiran", "informasi_berita_terkini"
   add_foreign_key "lampiran", "informasi_pengumuman"
+  add_foreign_key "laporan_guru_agama_katolik", "pemakai"
   add_foreign_key "laporan_kinerja_pegawai_bimkat_sumteng", "pemakai"
   add_foreign_key "laporan_penyuluh_agama_katolik", "pemakai"
 end
