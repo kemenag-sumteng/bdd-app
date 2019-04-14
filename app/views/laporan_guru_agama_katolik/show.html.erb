@@ -1,24 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Tautan:</strong>
-  <%= @laporan_guru_agama_katolik.tautan %>
-</p>
-
-<p>
-  <strong>Nama guru:</strong>
-  <%= @laporan_guru_agama_katolik.nama_guru %>
-</p>
-
-<p>
-  <strong>Judul:</strong>
-  <%= @laporan_guru_agama_katolik.judul %>
-</p>
-
-<p>
-  <strong>Pemakai:</strong>
-  <%= @laporan_guru_agama_katolik.pemakai %>
-</p>
-
-<%= link_to 'Edit', edit_laporan_guru_agama_katolik_path(@laporan_guru_agama_katolik) %> |
-<%= link_to 'Back', laporan_guru_agama_katolik_index_path %>
+<div class="card">
+	<h1 class="card-header"><%= @laporan_guru_agama_katolik.judul %></h1>
+	<div class="card-body">
+		<p>
+			<iframe src="https://drive.google.com/file/d/<%= @laporan_guru_agama_katolik.tautan %>/preview" style="width:1004px; height:787px;" frameborder="0"></iframe>
+		</p>
+	</div>
+	<div class="btn-group" role="group" aria-label="tampilkan-kembali">
+  	<%= link_to 'Edit', edit_laporan_guru_agama_katolikg_path(@laporan_guru_agama_katolik), :class => "btn btn-primary" %>
+  	<%= link_to 'Kembali', laporan_guru_agama_katolik_index_path, :class => "btn btn-secondary" %>
+  </div>
+</div>
