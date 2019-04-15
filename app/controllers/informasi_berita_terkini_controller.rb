@@ -1,4 +1,6 @@
 class InformasiBeritaTerkiniController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_informasi_berita_terkini, only: [:show, :edit, :update, :destroy]
 
   # GET /informasi_berita_terkini

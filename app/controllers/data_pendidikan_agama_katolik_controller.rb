@@ -1,4 +1,6 @@
 class DataPendidikanAgamaKatolikController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_data_pendidikan_agama_katolik, only: [:show, :edit, :update, :destroy]
 
   # GET /data_pendidikan_agama_katolik

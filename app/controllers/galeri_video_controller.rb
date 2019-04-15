@@ -1,4 +1,6 @@
 class GaleriVideoController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_galeri_video, only: [:show, :edit, :update, :destroy]
 
   # Embed Youtube Video

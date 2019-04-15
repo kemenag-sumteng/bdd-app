@@ -1,4 +1,6 @@
 class LaporanPenyuluhAgamaKatolikController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_laporan_penyuluh_agama_katolik, only: [:show, :edit, :update, :destroy]
 
   # GET /laporan_penyuluh_agama_katolik

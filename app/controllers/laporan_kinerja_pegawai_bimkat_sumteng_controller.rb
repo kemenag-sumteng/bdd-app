@@ -1,4 +1,6 @@
 class LaporanKinerjaPegawaiBimkatSumtengController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_laporan_kinerja_pegawai_bimkat_sumteng, only: [:show, :edit, :update, :destroy]
 
   # GET /laporan_kinerja_pegawai_bimkat_sumteng

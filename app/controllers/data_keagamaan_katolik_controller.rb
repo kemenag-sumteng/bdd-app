@@ -1,4 +1,6 @@
 class DataKeagamaanKatolikController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => :index
   before_action :set_data_keagamaan_katolik, only: [:show, :edit, :update, :destroy]
 
   # GET /data_keagamaan_katolik
