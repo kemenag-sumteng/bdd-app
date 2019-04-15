@@ -24,5 +24,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Membuat Data Pendidikan Agama  Katolik', new_data_pendidikan_agama_katolik_path, :class => "btn btn-primary" %>
+<% if can? :create, @data_pendidikan_agama_katolik %>
+  <%= link_to "Membuat Data Pendidikan Agama  Katolik", new_data_pendidikan_agama_katolik_path, :class => "btn btn-primary" %>
+<% end %>

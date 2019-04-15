@@ -26,4 +26,6 @@
 
 <br>
 
-<%= link_to 'Membuat Informasi Pengumuman', new_informasi_pengumuman_path, :class => "btn btn-primary" %>
+<% if can? :create, @informasi_pengumuman %>
+  <%= link_to "Membuat Informasi Pengumuman", new_informasi_pengumuman_path, :class => "btn btn-primary" %>
+<% end %>

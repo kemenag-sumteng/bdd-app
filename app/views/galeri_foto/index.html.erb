@@ -26,5 +26,6 @@
 </table>
 
 <br>
-
-<%= link_to 'Membuat Galeri Foto', new_galeri_foto_path, :class => "btn btn-primary" %>
+<% if can? :create, @galeri_foto %>
+  <%= link_to "Membuat Galeri Foto", new_galeri_foto_path, :class => "btn btn-primary" %>
+<% end %>

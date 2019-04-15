@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'Membuat Laporan Guru Agama Katolik', new_laporan_guru_agama_katolik_path, :class => "btn btn-primary" %>
+<% if can? :create, @laporan_guru_agama_katolik %>
+  <%= link_to "Membuat Laporan Guru Agama Katolik", new_laporan_guru_agama_katolik_path, :class => "btn btn-primary" %>
+<% end %>
