@@ -11,6 +11,9 @@ RailsAdmin.config do |config|
   ## == Cancan ==
   config.authorize_with :cancan
 
+  ## == Make sure RailsAdmin is inheriting from ApplicationController ==
+  config.parent_controller = 'ApplicationController'
+
   ## == Pundit ==
   # config.authorize_with :pundit
 
