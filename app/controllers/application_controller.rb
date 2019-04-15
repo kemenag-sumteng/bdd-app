@@ -1,4 +1,11 @@
 class ApplicationController < ActionController::Base
+	private
+	def current_user
+	  Pemakai.new(session[:id])
+	end
+	
+	helper_method :current_user
+	
 	rescue_from CanCan::AccessDenied do |exception|
     render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
     ## to avoid deprecation warnings with Rails 3.2.x (and incidentally using Ruby 1.9.3 hash syntax)
