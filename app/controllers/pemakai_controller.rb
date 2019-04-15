@@ -1,2 +1,0 @@
-class PemakaiController < ApplicationController
-end

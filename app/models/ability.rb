@@ -47,34 +47,34 @@ class Ability
     can :read, InformasiBeritaTerkini
     can :read, InformasiPengumuman
 
-    if pemakai.fungsi? "Administrator"
+    if pemakai.fungsi? == "Administrator"
       can :crud, :all
-    elsif pemakai.fungsi? "Guru Pendakat"
+    elsif pemakai.fungsi? == "Guru Pendakat"
       can :crud, LaporanGuruAgamaKatolik
-    elsif pemakai.fungsi? "Pegawai Pendakat"
+    elsif pemakai.fungsi? == "Pegawai Pendakat"
       can :crud, DataPendidikanAgamaKatolik
       can :crud, GaleriFoto
       can :crud, GaleriVideo
       can :crud, InformasiBeritaTerkini
       can :crud, InformasiPengumuman
       can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? "Penyelenggara Pendakat"
+    elsif pemakai.fungsi? == "Penyelenggara Pendakat"
       can :crud, DataPendidikanAgamaKatolik
       can :crud, GaleriFoto
       can :crud, GaleriVideo
       can :crud, InformasiBeritaTerkini
       can :crud, InformasiPengumuman
       can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? "Penyuluh Urakat"
+    elsif pemakai.fungsi? == "Penyuluh Urakat"
       can :crud, LaporanGuruAgamaKatolik
-    elsif pemakai.fungsi? "Pegawai Urakat"
+    elsif pemakai.fungsi? == "Pegawai Urakat"
       can :crud, DataPendidikanAgamaKatolik
       can :crud, GaleriFoto
       can :crud, GaleriVideo
       can :crud, InformasiBeritaTerkini
       can :crud, InformasiPengumuman
       can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? "Kasie Urakat"
+    elsif pemakai.fungsi? == "Kasie Urakat"
       can :crud, DataPendidikanAgamaKatolik
       can :crud, GaleriFoto
       can :crud, GaleriVideo
