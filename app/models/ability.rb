@@ -31,58 +31,29 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
-    # Rails Admin setup
-    can :access, :rails_admin   # grant access to rails_admin
-    can :read, :dashboard       # grant access to the dashboard
-
     # Alias setup
     alias_action :create, :read, :update, :destroy, to: :crud
 
     # Ability for everyone
     pemakai ||= Pemakai.new # in case of guest
-    can :read, DataKeagamaanKatolik
-    can :read, DataPendidikanAgamaKatolik
-    can :read, GaleriFoto
-    can :read, GaleriVideo
-    can :read, InformasiBeritaTerkini
-    can :read, InformasiPengumuman
+    can :read, [DataKeagamaanKatolik, DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman]
 
-    if pemakai.fungsi? == "Administrator"
+    if pemakai.fungsi? == "administrator"
+      can :access, :rails_admin       # only allow admin users to access Rails Admin
+      can :read, :dashboard           # allow access to dashboard
       can :crud, :all
-    elsif pemakai.fungsi? == "Guru Pendakat"
+    elsif pemakai.fungsi? == "guru_pendakat"
       can :crud, LaporanGuruAgamaKatolik
-    elsif pemakai.fungsi? == "Pegawai Pendakat"
-      can :crud, DataPendidikanAgamaKatolik
-      can :crud, GaleriFoto
-      can :crud, GaleriVideo
-      can :crud, InformasiBeritaTerkini
-      can :crud, InformasiPengumuman
-      can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? == "Penyelenggara Pendakat"
-      can :crud, DataPendidikanAgamaKatolik
-      can :crud, GaleriFoto
-      can :crud, GaleriVideo
-      can :crud, InformasiBeritaTerkini
-      can :crud, InformasiPengumuman
-      can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? == "Penyuluh Urakat"
-      can :crud, LaporanGuruAgamaKatolik
-    elsif pemakai.fungsi? == "Pegawai Urakat"
-      can :crud, DataPendidikanAgamaKatolik
-      can :crud, GaleriFoto
-      can :crud, GaleriVideo
-      can :crud, InformasiBeritaTerkini
-      can :crud, InformasiPengumuman
-      can :crud, LaporanKinerjaPegawaiBimkatSumteng
-    elsif pemakai.fungsi? == "Kasie Urakat"
-      can :crud, DataPendidikanAgamaKatolik
-      can :crud, GaleriFoto
-      can :crud, GaleriVideo
-      can :crud, InformasiBeritaTerkini
-      can :crud, InformasiPengumuman
-      can :crud, LaporanKinerjaPegawaiBimkatSumteng
+    elsif pemakai.fungsi? == "pegawai_pendakat"
+      can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
+    elsif pemakai.fungsi? == "penyelenggara_pendakat"
+      can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
+    elsif pemakai.fungsi? == "penyuluh_urakat"
+      can :crud, LaporanPenyuluhAgamaKatolik
+    elsif pemakai.fungsi? == "pegawai_urakat"
+      can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
+    elsif pemakai.fungsi? == "kasie_urakat"
+      can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
     end
-
-
   end
 end
