@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(version: 2019_04_14_050348) do
     t.index ["pemakai_id"], name: "index_data_pendidikan_agama_katolik_on_pemakai_id"
   end
 
+  create_table "fungsi", force: :cascade do |t|
+    t.string "nama"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "galeri_foto", force: :cascade do |t|
     t.string "judul"
     t.text "keterangan"
