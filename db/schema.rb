@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_102226) do
+ActiveRecord::Schema.define(version: 2019_04_17_103527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,12 +31,6 @@ ActiveRecord::Schema.define(version: 2019_04_17_102226) do
     t.datetime "updated_at", null: false
     t.bigint "pemakai_id"
     t.index ["pemakai_id"], name: "index_data_pendidikan_agama_katolik_on_pemakai_id"
-  end
-
-  create_table "fungsi", force: :cascade do |t|
-    t.string "nama"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "galeri_foto", force: :cascade do |t|
@@ -128,10 +122,8 @@ ActiveRecord::Schema.define(version: 2019_04_17_102226) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nama"
-    t.bigint "fungsi_id", default: 7
     t.string "fungsi", default: "Pengunjung"
     t.index ["email"], name: "index_pemakai_on_email", unique: true
-    t.index ["fungsi_id"], name: "index_pemakai_on_fungsi_id"
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
   end
 
