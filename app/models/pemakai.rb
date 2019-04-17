@@ -13,4 +13,10 @@ class Pemakai < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  after_create :penugasan_fungsi_standar
+
+  def penugasan_fungsi_standar
+    self.add_role(:pemirsa) if self.roles.blank?
+  end
 end
