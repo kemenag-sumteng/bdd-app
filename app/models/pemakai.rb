@@ -1,4 +1,5 @@
 class Pemakai < ApplicationRecord
+  rolify :role_cname => 'Fungsi'
   has_many :data_keagamaan_katolik
   has_many :data_pendidikan_agama_katolik
   has_many :galeri_foto
