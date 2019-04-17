@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_17_103922) do
+ActiveRecord::Schema.define(version: 2019_04_17_111821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 2019_04_17_103922) do
     t.datetime "updated_at", null: false
     t.bigint "pemakai_id"
     t.index ["pemakai_id"], name: "index_data_pendidikan_agama_katolik_on_pemakai_id"
+  end
+
+  create_table "fungsi", force: :cascade do |t|
+    t.string "name"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "resource_type", "resource_id"], name: "index_fungsi_on_name_and_resource_type_and_resource_id"
+    t.index ["resource_type", "resource_id"], name: "index_fungsi_on_resource_type_and_resource_id"
   end
 
   create_table "galeri_foto", force: :cascade do |t|
@@ -124,6 +134,14 @@ ActiveRecord::Schema.define(version: 2019_04_17_103922) do
     t.string "nama"
     t.index ["email"], name: "index_pemakai_on_email", unique: true
     t.index ["reset_password_token"], name: "index_pemakai_on_reset_password_token", unique: true
+  end
+
+  create_table "pemakai_fungsi", id: false, force: :cascade do |t|
+    t.bigint "pemakai_id"
+    t.bigint "fungsi_id"
+    t.index ["fungsi_id"], name: "index_pemakai_fungsi_on_fungsi_id"
+    t.index ["pemakai_id", "fungsi_id"], name: "index_pemakai_fungsi_on_pemakai_id_and_fungsi_id"
+    t.index ["pemakai_id"], name: "index_pemakai_fungsi_on_pemakai_id"
   end
 
   add_foreign_key "data_keagamaan_katolik", "pemakai"
