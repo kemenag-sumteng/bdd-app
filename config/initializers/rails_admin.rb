@@ -1,4 +1,8 @@
 RailsAdmin.config do |config|
+  # Rails Admin setup
+  config.main_app_name = ["Bimkat Sumteng", "Pengaturan"]
+  # or something more dynamic
+  #config.main_app_name = Proc.new { |controller| [ "Bimkat Sumteng", "Pengaturan - #{controller.params[:action].try(:titleize)}" ] }
 
   ### Popular gems integration
 
@@ -8,11 +12,11 @@ RailsAdmin.config do |config|
   # end
   # config.current_user_method(&:current_user)
 
-  ## == Cancan ==
-  config.authorize_with :cancan
-
   ## == Make sure RailsAdmin is inheriting from ApplicationController ==
   config.parent_controller = 'ApplicationController'
+
+  ## == Cancan ==
+  config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

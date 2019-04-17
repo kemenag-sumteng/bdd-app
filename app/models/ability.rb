@@ -3,7 +3,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(pemakai)
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -31,6 +31,9 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
+    can :access, :rails_admin   # grant access to rails_admin
+    can :read, :dashboard       # grant access to the dashboard
+
     # Alias setup
     alias_action :create, :read, :update, :destroy, to: :crud
 
@@ -38,21 +41,19 @@ class Ability
     pemakai ||= Pemakai.new # in case of guest
     can :read, [DataKeagamaanKatolik, DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman]
 
-    if pemakai.fungsi? == "administrator"
-      can :access, :rails_admin       # only allow admin users to access Rails Admin
-      can :read, :dashboard           # allow access to dashboard
+    if pemakai.has_role?(:administrator)
       can :crud, :all
-    elsif pemakai.fungsi? == "guru_pendakat"
+    elsif pemakai.has_role?(:guru_pendakat)
       can :crud, LaporanGuruAgamaKatolik
-    elsif pemakai.fungsi? == "pegawai_pendakat"
+    elsif pemakai.has_role?(:pegawai_pendakat)
       can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
-    elsif pemakai.fungsi? == "penyelenggara_pendakat"
+    elsif pemakai.has_role?(:penyelenggara_pendakat)
       can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
-    elsif pemakai.fungsi? == "penyuluh_urakat"
+    elsif pemakai.has_role?(:penyuluh_urakat)
       can :crud, LaporanPenyuluhAgamaKatolik
-    elsif pemakai.fungsi? == "pegawai_urakat"
+    elsif pemakai.has_role?(:pegawai_urakat)
       can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
-    elsif pemakai.fungsi? == "kasie_urakat"
+    elsif pemakai.has_role?(:kasie_urakat)
       can :crud, [DataPendidikanAgamaKatolik, GaleriFoto, GaleriVideo, InformasiBeritaTerkini, InformasiPengumuman, LaporanKinerjaPegawaiBimkatSumteng]
     end
   end
